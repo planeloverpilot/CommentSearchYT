@@ -1,10 +1,13 @@
 # CommentSearchYT
 
-Search any comment in YouTube videos easily!
+Search any comment in YouTube videos easily
 
 ## Description
 
 CommentSearchYT is a tool that allows you to search through and find any comment in a YouTube video. Quickly locate specific comments without scrolling through hundreds of them.
+
+## Why its different from ctrl+F
+this extension searches comments from the entire database of that videos comments, unlike ctrl+F where it displays results for only the first 20 comments
 
 ## Features
 
@@ -37,6 +40,3 @@ CommentSearchYT is a tool that allows you to search through and find any comment
 
 Feel free to fork this repository and submit pull requests for any improvements!
 
-## License
-
-This project is open source and available under the MIT License.
