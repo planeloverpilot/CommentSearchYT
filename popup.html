@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 350px; padding: 15px; font-family: sans-serif; }
+    input { width: 70%; padding: 8px; }
+    button { width: 25%; padding: 8px; background: red; color: white; border: none; cursor: pointer; }
+    
+    #results { margin-top: 15px; max-height: 400px; overflow-y: auto; }
+    
+    .comment-item { 
+      border-bottom: 1px solid #ddd; 
+      padding: 10px 0; 
+      font-size: 12px; 
+    }
+    .author { font-weight: bold; color: #333; }
+    .text { margin-top: 4px; color: #555; }
+    .link { 
+      display: block; 
+      margin-top: 5px; 
+      color: blue; 
+      text-decoration: underline; 
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+  <h3>CommentSearchYT</h3>
+  <input type="text" id="searchInput" placeholder="Search term...">
+  <button id="searchBtn">Find a word your looking for in a comment:</button>
+  <div id="results"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
