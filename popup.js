@@ -17,7 +17,7 @@ document.getElementById("searchBtn").addEventListener("click", async()=>{
     return;
     }
 
-    const apiUrl = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&searchTerms=${query}&maxResults=20&key=${API_KEY}`;
+    const apiUrl = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${videoId}&searchTerms=${query}&maxResults=20&key=${API_KEY}`;
 
     try {
     const response = await fetch(apiUrl);
@@ -44,6 +44,24 @@ document.getElementById("searchBtn").addEventListener("click", async()=>{
         <a class="link" href="${linkUrl}" target="_blank">Go to comment</a>`;
       
         resultsDiv.appendChild(div);
+
+        if (item.replies) {
+        item.replies.comments.forEach(replyItem => {
+            const reply = replyItem.snippet;
+            
+            const replyDiv = document.createElement("div");
+            replyDiv.className = "comment-item reply-comment";
+            replyDiv.style.marginLeft = "20px"; 
+            replyDiv.style.borderLeft = "2px solid #ccc";
+
+            replyDiv.innerHTML = `
+                <div class="author">${reply.authorDisplayName} (Reply)</div>
+                <div class="text">${reply.textDisplay}</div>
+                <a class="link" href="https://www.youtube.com/watch?v=${videoId}&lc=${replyItem.id}" target="_blank">Go to comment</a>
+            `;
+            resultsDiv.appendChild(replyDiv);
+        });
+    }
     });
     }
     catch(error){
