@@ -28,7 +28,7 @@ this extension searches comments from the entire database of that videos comment
    git clone https://github.com/planeloverpilot/CommentSearchYT.git
    ```
 
-2. Open the `index.html` file in your web browser
+2. Open the `popup.html` file in your web browser
 
 ## Usage
 
